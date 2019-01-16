@@ -2,8 +2,8 @@
 /**
  * Write a description of class SelectSort here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Nick Gonzales)
+ * @version (1/12/18)
  */
 public class SelectionSort 
 { 
