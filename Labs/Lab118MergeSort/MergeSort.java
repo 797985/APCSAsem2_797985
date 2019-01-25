@@ -7,8 +7,6 @@
  */
 public class MergeSort
 {
-   
-    
     public static void mergeSort(int[] a, int n)
     {
         int array[];
