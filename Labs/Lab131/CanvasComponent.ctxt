@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=CanvasComponent
+comment1.params=width\ height
+comment1.target=CanvasComponent(int,\ int)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ CanvasComponent\r\n
+numComments=2
