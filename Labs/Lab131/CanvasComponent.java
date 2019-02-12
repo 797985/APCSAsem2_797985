@@ -8,7 +8,7 @@
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
-public class CanvasComponent extends JComponent implements MouseListener, MouseMotionListener
+public class CanvasComponent extends JComponent implements MouseListener, MouseMotionListener, ActionListener
 {
     // instance variables - replace the example below with your own
     private int xPosition;
@@ -26,6 +26,7 @@ public class CanvasComponent extends JComponent implements MouseListener, MouseM
     private int animationDeltaY;
     private int gutterX;
     private int gutterY;
+    
     /**
      * Constructor for objects of class CanvasComponent
      */
@@ -68,10 +69,36 @@ public class CanvasComponent extends JComponent implements MouseListener, MouseM
         xPosition=mouseToX;//-mouseFromX;
         yPosition=mouseToY;//-mouseFromY;
         repaint();
-    
     }
     public void actionPerformed(ActionEvent e){
-        
+        Dimension componentSizeDimension = getSize();
+        if(xPosition + yPosition + gutterX > width){
+            xPosition = width - rectWidth - gutterX;
+            animationDeltaX = 1;
+            animationDeltaY = 0;
+            yPosition += animationDeltaY;
+        }
+        if(xPosition + yPosition + gutterY > height){
+            yPosition = height - rectHeight - gutterY;
+            animationDeltaX = 0;
+            animationDeltaY = 1;
+            xPosition += animationDeltaX;
+        }
+        if(xPosition + yPosition + gutterX < width){
+            xPosition = gutterX;
+            animationDeltaX = -1;
+            animationDeltaY = 0;
+            yPosition += animationDeltaY;
+        }
+        if(xPosition + yPosition + gutterY < height){
+            yPosition = gutterY;
+            animationDeltaX = 0;
+            animationDeltaY = -1;
+            xPosition += animationDeltaX;
+        }else{
+            xPosition += animationDeltaX;
+            yPosition += animationDeltaY;
+        }
     }
     public void mouseReleased(MouseEvent e){
         
