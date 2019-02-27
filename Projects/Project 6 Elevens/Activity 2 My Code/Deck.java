@@ -24,33 +24,35 @@ public class Deck {
      * and produces one of the corresponding card.
      * @param ranks is an array containing all of the card ranks.
      * @param suits is an array containing all of the card suits.
-         * @param values is an array containing all of the card point values.
+     * @param values is an array containing all of the card point values.
      */
     public Deck(String[] ranks, String[] suits, int[] values) {
-        ArrayList <Card> deck = new ArrayList<Card>();
-        Card x = new Card(rank, suit, value);
-        String rank = ranks[1];
-        String suit = suits[1];
-        int value = values[1];
+        cards = new ArrayList<Card>();
+        for (int j = 0; j < ranks.length; j++) {
+            for (String suitString : suits) {
+                cards.add(new Card(ranks[j], suitString, values[j]));
+            }
+        }
+        size = cards.size();
+        shuffle();
     }
+
     /**
      * Determines if this deck is empty (no undealt cards).
      * @return true if this deck is empty, false otherwise.
      */
     public boolean isEmpty() {
-        if (String.length == 0){
-            return true;
-        }else{
-            return false;
-        }
+        return size == 0;
     }
+
     /**
      * Accesses the number of undealt cards in this deck.
      * @return the number of undealt cards in this deck. 
      */
     public int size() {
-        
+        return size;
     }
+
     /**
      * Randomly permute the given collection of cards
      * and reset the size to represent the entire deck.
@@ -58,14 +60,21 @@ public class Deck {
     public void shuffle() {
         /* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
     }
+
     /**
      * Deals a card from this deck.
      * @return the card just dealt, or null if all the cards have been
      *         previously dealt.
      */
     public Card deal() {
-        /* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+        if (isEmpty()) {
+            return null;
+        }
+        size--;
+        Card c = cards.get(size);
+        return c;
     }
+
     /**
      * Generates and returns a string representation of this deck.
      * @return a string representation of this deck.
