@@ -8,7 +8,6 @@ public class Shuffler {
      * to each sorting procedure.
      */
     private static final int SHUFFLE_COUNT = 1;
-
     /**
      * Tests shuffling methods.
      * @param args is not used.
@@ -52,12 +51,12 @@ public class Shuffler {
         int k = 0;
         for (int j = 0; j < 1; j++) {
             values[j] = shuffled[k];
-            k = k+2;
+            k = k+k;
         }
         k = 1;
-        for (int j = 2; j < 4; j++){
+        for (int j = 2; j < 3; j++){
             values[j] = shuffled[k];
-            k = k+2;
+            k = k+k;
         }
     }
 
