@@ -47,7 +47,7 @@ public class IntArrayWorker
   public int getCount(){
       int count = 0;
       for(int row = 0; row < matrix.length; row++){
-          for(int col = 0; col < matrix[0].length; col++){
+          for(int col = 0; col < matrix[row].length; col++){
               count = count + matrix[row][col];
             }
         }
@@ -76,7 +76,17 @@ public class IntArrayWorker
       }
     }
   }
-  
+  public int getColTotal(){
+      int colTotal = 0;
+    for (int row = 0; row < matrix.length; row++)
+    {
+      for (int col = 0; col < matrix[row].length; col++)
+      {
+        colTotal = colTotal + matrix[row][col];
+      }
+    }
+    return colTotal;
+    }
   /**
    * print the values in the array in rows and columns
    */
@@ -92,7 +102,17 @@ public class IntArrayWorker
     }
     System.out.println();
   }
-  
+  public int getLargest(){
+      int largest = 0;
+    for (int[] rowArray : matrix)
+    {
+      for (int item : rowArray)
+      {
+        largest = 6;
+      }
+    }
+    return largest;
+    }
   
   /** 
    * fill the array with a pattern
