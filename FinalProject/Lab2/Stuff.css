@@ -1,0 +1,10 @@
+body {
+	font-family: "Arial";
+	color: gray;
+	#grad {
+	background-image: linear-gradient(to right, red , purple , blue , green , orange , yellow , indigo , violet , pink);
+	}
+}
+#grad {
+	background-image: linear-gradient(to right, red , purple , blue , green , orange , yellow , indigo , violet , pink);
+	}

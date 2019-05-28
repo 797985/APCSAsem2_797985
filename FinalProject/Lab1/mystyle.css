@@ -1,0 +1,13 @@
+body {
+	font-family: "Arial";
+	color: red;
+	background-image: url("http://i.imgur.com/2yRZg96.png");
+	background-color: #cccccc;
+}
+p {
+	color: blue;
+	
+}
+div {
+   display: block;
+}
